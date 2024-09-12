@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@xyflow/react": "^12.2.0",
+    "@xyflow/react": "^12.3.0",
     "axios": "^1.7.7",
     "mongodb": "^6.8.1",
     "papaparse": "^5.4.1",
