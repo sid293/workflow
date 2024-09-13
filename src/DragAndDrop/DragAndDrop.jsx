@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react';
 import Papa from 'papaparse';
 
-const DragAndDrop = () => {
+const DragAndDrop = ({csvdata, setCsvdata}) => {
   const [jsonData, setJsonData] = useState(null);
   const [error, setError] = useState(null);
 
@@ -11,7 +11,9 @@ const DragAndDrop = () => {
 
     const file = event.dataTransfer.files[0];
     if (file && file.type === 'text/csv') {
-      parseCSV(file);
+      //set data in state of app2
+      setCsvdata(file);
+      // parseCSV(file);
     } else {
       setError('Please upload a CSV file.');
     }

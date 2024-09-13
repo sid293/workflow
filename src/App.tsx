@@ -35,7 +35,6 @@ export default function App() {
 
   const validateConnetion = useCallback((connection: Connection)=>{
     let target: string = connection.target;
-    // console.log("edges ",edges," target ",target);
     let targetExist = edges.find((e)=> e.target === target);
     if(targetExist){
       console.log("target present");
@@ -57,9 +56,7 @@ export default function App() {
     let workflowObject = {id:workflowId,nodes:nodes,edges:edges};
     setWorkflowId(Math.random().toString(36).slice(2,11));
     let backendUrl = import.meta.env.VITE_BACKEND_URL;
-    // console.log("backend url ",backendUrl);
     let response = await axios.post(`${backendUrl}setworkflow`,workflowObject);
-    // console.log("saveworkflow responser ",response);
     if(response){
       console.log("successfully added");
       navigate("/run");
@@ -86,14 +83,12 @@ export default function App() {
     <div style={{
       width:"90vw",
       height:"90vh",
-      border:"2px solid green",
       display:"flex"}}>
       <div
         style={{
           height: "40px",
           zIndex: 1,
           display: "felx",
-          // justifySelf:"end",
           right: "10vw",
           position: "absolute"
         }}
